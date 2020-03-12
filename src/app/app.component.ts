@@ -18,4 +18,8 @@ export class AppComponent {
     this.text = "";
   }
 
+  delete(pessoa) {
+    this.people.splice(this.people.indexOf(pessoa));
+  }
+
 }

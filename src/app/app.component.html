@@ -5,6 +5,14 @@
   <button (click)="register()">OK</button>
 </form>
 <h3>Pessoas cadastradas</h3>
-<ul *ngFor="let pessoa of people">
-  <li>{{pessoa}}</li>
-</ul>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Excluir</th>
+  </tr>
+  <tr *ngFor="let pessoa of people">
+    <td>{{pessoa}}</td>
+    <td><button type="button" name="pessoa" (click)="delete(pessoa)">X</button></td>
+  </tr>
+</table>
