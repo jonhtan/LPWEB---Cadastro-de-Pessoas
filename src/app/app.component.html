@@ -4,7 +4,7 @@
   <input type="text" name="text" placeholder="Cadastrar..." [(ngModel)]="text">
   <br>
   <label>Idade</label>
-  <input type="text" name="agetxt" placeholder="Idade..." [(ngModel)]="agetxt">
+  <input type="text" name="age" placeholder="Idade..." [(ngModel)]="age">
   <button (click)="register()">OK</button>
 </form>
 <h3>Pessoas cadastradas</h3>
@@ -23,7 +23,7 @@
 </table>
 <br>
 <span>Total das pessoas cadastradas:{{people.length}}</span>
-<span *ngIf="younger.name">
+<span >
   <p>Pessoa mais jovem: {{younger.name}}, com {{younger.age}} anos</p>
   <p>Pessoa mais idosa: {{older.name}}, com {{older.age}} anos</p>
 </span>
