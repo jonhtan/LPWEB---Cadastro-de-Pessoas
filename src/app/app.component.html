@@ -23,3 +23,7 @@
 </table>
 <br>
 <span>Total das pessoas cadastradas:{{people.length}}</span>
+<span *ngIf="younger.name">
+  <p>Pessoa mais jovem: {{younger.name}}, com {{younger.age}} anos</p>
+  <p>Pessoa mais idosa: {{older.name}}, com {{older.age}} anos</p>
+</span>
