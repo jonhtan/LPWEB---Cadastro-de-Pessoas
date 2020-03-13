@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Cadastro Pessoas Simplificado';
+  title = 'Cadastro Pessoas Estatisticas';
 
   person = new Person();
 

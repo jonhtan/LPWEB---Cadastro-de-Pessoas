@@ -16,14 +16,14 @@
     <th>Excluir</th>
   </tr>
   <tr *ngFor="let pessoa of people">
-    <td>{{pessoa.name}}</td>
-    <td>{{pessoa.age}}</td>
+    <td>{{pessoa.getName()}}</td>
+    <td>{{pessoa.getAge()}}</td>
     <td><button type="button" name="pessoa" (click)="delete(pessoa)">X</button></td>
   </tr>
 </table>
 <br>
-<span>Total das pessoas cadastradas:{{people.length}}</span>
-<span *ngIf="younger.name">
-  <p>Pessoa mais jovem: {{younger.name}}, com {{younger.age}} anos</p>
-  <p>Pessoa mais idosa: {{older.name}}, com {{older.age}} anos</p>
+<span>Total das pessoas cadastradas: {{people.length}}</span>
+<span *ngIf="younger.getName()">
+  <p>Pessoa mais jovem: {{younger.getName()}}, com {{younger.getAge()}} anos</p>
+  <p>Pessoa mais idosa: {{older.getName()}}, com {{older.getAge()}} anos</p>
 </span>
