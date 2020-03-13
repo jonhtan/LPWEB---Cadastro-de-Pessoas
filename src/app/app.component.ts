@@ -21,7 +21,7 @@ export class AppComponent {
 
   register() {
     this.person.setName(this.text);
-    this.person.setAge(parseInt(this.age));
+    this.person.setAge(this.age);
     this.people.push(this.person);
     this.text = "";
     this.age = "";
@@ -30,28 +30,44 @@ export class AppComponent {
   }
 
   delete(pessoa) {
+    let actual_p = this.people[this.people.indexOf(pessoa)];
+    
     this.people.splice(this.people.indexOf(pessoa), 1);
-    // this.updateStatistic();
+    this.updateYounger();
+    this.updateOlder();
   }
 
   updateStatistic() {
     if(this.younger.getName()) {
-      
+      if(this.person.getAge()>this.older.getAge()) {
+        this.older = this.person;
+      } else if (this.person.getAge()<this.younger.getAge()) {
+        this.younger = this.person;
+      }
     } else { //if not exist set the first
       this.younger = this.person;
       this.older = this.person;
     }
-    // for(let x in this.people) {
-    //   for(let y in this.people) {
-    //     let a1 = this.people[x].age;
-    //     let a2 = this.people[y].age;
-    //     if(a1<a2) {
-    //       this.older = this.people[y];
-    //       this.younger = this.people[x];
-    //       console.log(typeof(a1));
-    //     }
-    //   }
-    // }
+  }
+
+  updateYounger() {
+    this.younger = new Person();
+    this.younger.setAge("99999999");
+    for(let x=0; x<this.people.length;x++) {
+      if(this.younger.getAge()>this.people[x].getAge()) {
+        this.younger = this.people[x];
+      }
+    }
+  }
+
+  updateOlder() {
+    this.older = new Person();
+    this.older.setAge("0");
+    for(let x=0; x<this.people.length;x++) {
+      if(this.older.getAge()<this.people[x].getAge()) {
+        this.older = this.people[x];
+      }
+    }
   }
 
 }
@@ -60,20 +76,22 @@ export class Person {
   private name: string;
   private age: number;
 
+  constructor() {}
+
   setName(name: string) {
     this.name = name;
   }
 
-  setAge(age: number) {
-    this.age = age;
+  setAge(age: string) {
+    this.age = parseInt(age);
   }
 
   getName(): string {
     return this.name;
   }
 
-  getAge(): string {
-    return this.age.toString();
+  getAge(): number {
+    return this.age;
   }
 
 }
