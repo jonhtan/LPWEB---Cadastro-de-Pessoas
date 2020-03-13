@@ -2,6 +2,9 @@
 <form ngForm name="cadastro">
   <label>Nome</label>
   <input type="text" name="text" placeholder="Cadastrar..." [(ngModel)]="text">
+  <br>
+  <label>Idade</label>
+  <input type="text" name="agetxt" placeholder="Idade..." [(ngModel)]="agetxt">
   <button (click)="register()">OK</button>
 </form>
 <h3>Pessoas cadastradas</h3>
@@ -9,10 +12,12 @@
 <table>
   <tr>
     <th>Nome</th>
+    <th>Idade</th>
     <th>Excluir</th>
   </tr>
   <tr *ngFor="let pessoa of people">
-    <td>{{pessoa}}</td>
+    <td>{{pessoa.name}}</td>
+    <td>{{pessoa.age}}</td>
     <td><button type="button" name="pessoa" (click)="delete(pessoa)">X</button></td>
   </tr>
 </table>
