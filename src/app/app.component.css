@@ -1,0 +1,32 @@
+* {
+    font-family: Helvetica, Lato, Hack, arial;
+}
+
+table, tr {
+    background: #d8d8d8;
+}
+td {
+    background: #f2f2f2;
+    height: 36px;
+}
+th:first-of-type {
+    width: 256px;
+    border-right: 1px solid #c8c8c8;
+}
+
+
+td>button {
+    display: block;
+    margin: 0 auto;
+    width: 26px;
+    height: 24px;
+    background: linear-gradient(to bottom, #ff6262, #ff4242);
+    border: 1px solid #f66;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #ff4242, 0px 1px 2px #000;
+    color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+}
